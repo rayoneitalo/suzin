@@ -3,11 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
 
 :root {
-  --color-primary: #2E1D15;   /** h1 */
-  --color-secondary: #A85D37; /** h2, border */
-  --color-text: #695044;      /** p, span */
-  /* --color-background: #D6BA9D; */
+  --color-primary: #2E1D15;       /** h1 */
+  --color-secondary: #A85D37;     /** h2, border */
+  --color-text: #695044;          /** p, span */
   --color-background: #F2EEEB;
+  /* --color-background: #D6BA9D; */
 }
 
 * {
