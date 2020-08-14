@@ -9,8 +9,8 @@ export default createGlobalStyle`
   --color-background: #F6F3EF;
   --color-input: #808080;
 
-  --font-headings: Crimson Text;
-  --font-text: Source Sans Pro;
+  --font-headings: Lato;
+  --font-text: Lato;
 
   font-size: 60%;
 

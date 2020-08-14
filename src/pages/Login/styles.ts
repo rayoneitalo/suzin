@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import signIn from '../../assets/images/signIn.jpeg';
-
 export const Container = styled.div`
   width: 100%;
   height: 100%;
