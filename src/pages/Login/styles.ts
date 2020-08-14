@@ -38,15 +38,8 @@ export const SignInForm = styled.div`
   }
 `;
 
-export const Buttons = styled.button`
+export const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-
-  > button {
-    background-color: var(--color-secondary);
-    border-radius: 3px;
-    padding: 1.5rem;
-    color: var(--color-primary);
-  }
 `;

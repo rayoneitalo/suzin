@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import FormInput from '../../components/FormInput';
+import CustomButton from '../../components/CustomButton';
+import { signInWithGoogle } from '../../firebase/firebase-utils';
 
 import { Container, SignInForm, Buttons } from './styles';
 
@@ -46,8 +48,10 @@ const Login: React.FC = () => {
         </form>
 
         <Buttons>
-          <button>Logar com o e-mail</button>
-          <button>Logar com o Google</button>
+          <CustomButton type='submit'>Logar com seu email</CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+            Logar com o Google
+          </CustomButton>
         </Buttons>
       </SignInForm>
     </Container>

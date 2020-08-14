@@ -49,6 +49,7 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
+    "@types/firebase": "^3.2.1",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.2",
     "commitizen": "^4.1.2",
