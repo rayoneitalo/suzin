@@ -15,7 +15,7 @@ export const Container = styled.div`
 `;
 
 export const SignInForm = styled.div`
-  padding: 2rem;
+  padding: 4rem 2rem;
   background: #fff;
   border-radius: 10px;
 
@@ -38,6 +38,7 @@ export const SignInForm = styled.div`
 
 export const Buttons = styled.div`
   display: flex;
+  transform: translateY(2rem);
   justify-content: space-between;
   width: 100%;
 `;

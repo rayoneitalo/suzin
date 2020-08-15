@@ -1,7 +1,7 @@
 import React from 'react';
 
 import GlobalStyles from './styles/GlobalStyles';
-import { auth } from './firebase/firebase-utils';
+import { auth, createUserProfileDocument } from './firebase/firebase-utils';
 
 import Routes from './routes';
 
@@ -23,8 +23,9 @@ class App extends React.Component<MyProps, MyState> {
   unsubscribeFromAuth: any = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) =>
-      this.setState({ currentUser: user })
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(
+      async (user) => console.log(createUserProfileDocument(user, ''))
+      // this.setState({ currentUser: user })
     );
   }
 

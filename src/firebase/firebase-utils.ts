@@ -13,6 +13,17 @@ const firebaseConfig = {
   measurementId: 'G-JF3KDLYJ67',
 };
 
+export const createUserProfileDocument = async (
+  userAuth: firebase.User | null,
+  additionalData: string
+) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+  console.log(snapShot);
+};
+
 firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
