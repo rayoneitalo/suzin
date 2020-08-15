@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, GoogleIcon } from './styles';
 
 interface CustomButtonProps {
   type?: any;
@@ -15,7 +15,10 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 }) => {
   return (
     <Container>
-      <button {...rest}>{children}</button>
+      <button {...rest}>
+        {isGoogleSignIn && <GoogleIcon />}
+        {children}
+      </button>
     </Container>
   );
 };

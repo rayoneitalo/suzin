@@ -51,6 +51,11 @@ export const RightSide = styled.div`
       transform: translateX(0);
 
       > li {
+        > a {
+          cursor: pointer;
+          color: var(--color-primary);
+        }
+
         &:not(:last-child) {
           padding-right: 3rem;
         }

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Header from './components/Header';
 import GlobalStyles from './styles/GlobalStyles';
 import { auth } from './firebase/firebase-utils';
 
@@ -37,8 +36,7 @@ class App extends React.Component<MyProps, MyState> {
     return (
       <>
         <GlobalStyles />
-        <Header currentUser={this.state.currentUser} />
-        <Routes />
+        <Routes currentUser={this.state.currentUser} />
       </>
     );
   }
