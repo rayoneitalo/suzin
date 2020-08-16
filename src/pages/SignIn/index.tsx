@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import FormInput from '../../components/FormInput';
 import CustomButton from '../../components/CustomButton';
 import { signInWithGoogle } from '../../firebase/firebase-utils';
 
-import { Container, SignInForm, Buttons } from './styles';
+import { Container, SignInForm, Buttons, RightArrowIcon } from './styles';
 
 interface MyProps {}
 
@@ -13,7 +14,7 @@ interface MyState {
   password: string;
 }
 
-class Login extends React.Component<MyProps, MyState> {
+class SignIn extends React.Component<MyProps, MyState> {
   constructor(props: any) {
     super(props);
 
@@ -56,23 +57,29 @@ class Login extends React.Component<MyProps, MyState> {
             <FormInput
               name='password'
               type='password'
-              label='password'
+              label='senha'
               value={this.state.password}
               handleChange={this.handleChange}
               required
             />
+
+            <Buttons>
+              <CustomButton type='submit'>Logar com seu Email</CustomButton>
+              <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+                Logar com o Google
+              </CustomButton>
+            </Buttons>
           </form>
 
-          <Buttons>
-            <CustomButton type='submit'>Logar com seu email</CustomButton>
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-              Logar com o Google
-            </CustomButton>
-          </Buttons>
+          <span>
+            <RightArrowIcon />
+            Não possui uma conta?&nbsp;
+            <Link to='/cadastrar'> Clique aqui para criar uma!</Link>
+          </span>
         </SignInForm>
       </Container>
     );
   }
 }
 
-export default Login;
+export default SignIn;

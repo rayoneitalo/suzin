@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   Deslogar
                 </Link>
               ) : (
-                <Link to='/login'>Logar</Link>
+                <Link to='/logar'>Logar</Link>
               )}
             </li>
           </ul>

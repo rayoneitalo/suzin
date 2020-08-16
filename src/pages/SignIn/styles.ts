@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { ChevronRight } from '../../styles/GlobalIcons';
+
 export const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -9,15 +11,16 @@ export const Container = styled.div`
   justify-content: center;
   margin: 0 auto;
 
-  height: 100%;
-
   background-size: cover;
 `;
 
 export const SignInForm = styled.div`
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background: #fff;
   border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
 
   > form {
     display: flex;
@@ -28,17 +31,43 @@ export const SignInForm = styled.div`
     }
   }
 
+  > span {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+
+    > a {
+      color: var(--color-primary);
+    }
+  }
+
   @media (min-width: 700px) {
     width: 700px;
     margin: 1rem;
-    padding: 4rem;
+    padding: 4rem 4rem 2rem 4rem;
     margin: 0 auto;
   }
 `;
 
 export const Buttons = styled.div`
   display: flex;
-  transform: translateY(2rem);
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
+
+  > div {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+
+export const RightArrowIcon = styled(ChevronRight)`
+  width: 3rem;
+  width: 3rem;
+  margin-left: -1rem;
 `;

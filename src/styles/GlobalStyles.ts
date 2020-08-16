@@ -30,8 +30,6 @@ html, body, #root {
   min-width: 100vw;
   min-height: 100vh;
 
-  width: 100%;
-  height: 100%;
   background-color: var(--color-background);
 }
 
@@ -51,5 +49,15 @@ span, p, label {
 
 ::placeholder, ::-ms-input-placeholder, input {
   color: var(--color-input)
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top: 4rem;
+
+  @media (min-width: 700px) {
+    margin-top: 5rem;
+  }
 }
 `;

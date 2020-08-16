@@ -7,13 +7,16 @@ export const Container = styled.div`
     background-color: var(--color-secondary);
     border-radius: 3px;
     padding: 1.7rem;
+
     color: var(--color-primary);
+    font-size: 1.5rem;
+
     cursor: pointer;
   }
 `;
 
 export const GoogleIcon = styled(Google)`
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   margin-right: 1rem;
 `;

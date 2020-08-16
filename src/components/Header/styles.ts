@@ -5,7 +5,7 @@ import { ThreeBars } from '../../styles/GlobalIcons';
 
 export const Container = styled.header`
   width: 100%;
-  height: 2rem;
+  height: 5rem;
 
   > nav {
     display: flex;
@@ -16,7 +16,7 @@ export const Container = styled.header`
 
   @media (min-width: 700px) {
     > nav {
-      padding: 2rem 8rem;
+      padding: 1rem 8rem;
     }
   }
 `;
