@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import FormInput from '../../components/FormInput';
 import CustomButton from '../../components/CustomButton';
-import { signInWithGoogle } from '../../firebase/firebase-utils';
+import { signInWithGoogle, auth } from '../../firebase/firebase-utils';
 
 import { Container, SignInForm, Buttons, RightArrowIcon } from './styles';
 
@@ -34,10 +34,17 @@ class SignIn extends React.Component<MyProps, MyState> {
   };
 
   // Save data to firebase
-  handleSubmit = (event: React.FormEvent<HTMLElement>) => {
+  handleSubmit = async (event: React.FormEvent<HTMLElement>) => {
     event.preventDefault();
 
-    console.log('Handle submit!');
+    const { email, password } = this.state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      this.setState({ email: '', password: '' });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   render() {
