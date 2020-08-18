@@ -8,36 +8,38 @@ interface HeaderProps {
   currentUser: null | firebase.User;
 }
 
-const Header: React.FC<HeaderProps> = ({ currentUser }) => {
-  return (
-    <Container>
-      <nav>
-        <Link to='/'>
-          <Logo />
-        </Link>
-        <RightSide>
-          <Bars />
-          <ul>
-            <li>
-              <Link to='/'>Início</Link>
-            </li>
-            <li>
-              <Link to='/'>Produtos</Link>
-            </li>
-            <li>
-              {currentUser ? (
-                <Link to='/' onClick={() => auth.signOut()}>
-                  Deslogar
-                </Link>
-              ) : (
-                <Link to='/logar'>Logar</Link>
-              )}
-            </li>
-          </ul>
-        </RightSide>
-      </nav>
-    </Container>
-  );
-};
+class Header extends React.Component<HeaderProps, {}> {
+  render() {
+    return (
+      <Container>
+        <nav>
+          <Link to='/'>
+            <Logo />
+          </Link>
+          <RightSide>
+            <Bars />
+            <ul>
+              <li>
+                <Link to='/'>Início</Link>
+              </li>
+              <li>
+                <Link to='/'>Produtos</Link>
+              </li>
+              <li>
+                {this.props.currentUser ? (
+                  <Link to='/' onClick={() => auth.signOut()}>
+                    Deslogar
+                  </Link>
+                ) : (
+                  <Link to='/logar'>Logar</Link>
+                )}
+              </li>
+            </ul>
+          </RightSide>
+        </nav>
+      </Container>
+    );
+  }
+}
 
 export default Header;

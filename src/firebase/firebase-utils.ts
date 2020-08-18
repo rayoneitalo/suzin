@@ -13,6 +13,17 @@ const firebaseConfig = {
   measurementId: 'G-B8QJGTERPC',
 };
 
+firebase.initializeApp(firebaseConfig);
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+// Authenticate with user google
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
+// Authenticate with user and password
 export const createUserProfileDocument = async (
   userAuth: firebase.User | null,
   additionalData?: any
@@ -35,14 +46,5 @@ export const createUserProfileDocument = async (
 
   return userRef;
 };
-
-firebase.initializeApp(firebaseConfig);
-
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
-
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
