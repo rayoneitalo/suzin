@@ -5,15 +5,11 @@ import Header from './components/Header';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
-interface RoutesProps {
-  currentUser: null | firebase.User;
-}
-
-const Routes: React.FC<RoutesProps> = ({ currentUser }) => {
+const Routes: React.FC = () => {
   return (
     <>
       <BrowserRouter>
-        <Header currentUser={currentUser} />
+        <Header />
         <Switch>
           <div className='container'>
             <Route exact path='/logar' component={SignIn} />
