@@ -14,13 +14,11 @@ const Routes: React.FC<RoutesProps> = ({ currentUser }) => {
   return (
     <>
       <BrowserRouter>
-        <Header currentUser={currentUser} />
+        {/* <Header currentUser={currentUser} /> */}
         <Switch>
-          <div className='container'>
-            <Route exact path='/logar' component={SignIn} />
-            <Route exact path='/cadastrar' component={SignUp} />
-            <Route exact path='/control' component={ControlPainel} />
-          </div>
+          <Route exact path='/logar' component={SignIn} />
+          <Route exact path='/cadastrar' component={SignUp} />
+          <Route exact path='/control' component={ControlPainel} />
         </Switch>
       </BrowserRouter>
     </>
