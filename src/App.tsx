@@ -1,40 +1,36 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import GlobalStyles from './styles/GlobalStyles';
 import { auth, createUserProfileDocument } from './firebase/firebase-utils';
+import { setCurrentUser } from './redux/actions/user';
 
 import Routes from './routes';
 
-interface MyProps {}
-
-interface MyState {
-  currentUser: null | firebase.User;
+interface MyProps {
+  currentUser: any;
 }
 
+interface MyState {}
+
 class App extends React.Component<MyProps, MyState> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      currentUser: null,
-    };
-  }
-
   unsubscribeFromAuth: any = null;
 
   componentDidMount() {
+    const { currentUser } = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef?.onSnapshot((snapshot: any) => {
-          this.setState({
-            currentUser: {
-              id: snapshot.id,
-              ...snapshot.data(),
-            },
+          currentUser({
+            id: snapshot.id,
+            ...snapshot.data(),
           });
         });
+      } else {
+        currentUser(userAuth);
       }
     });
   }
@@ -47,10 +43,18 @@ class App extends React.Component<MyProps, MyState> {
     return (
       <>
         <GlobalStyles />
-        <Routes currentUser={this.state.currentUser} />
+        <Routes />
       </>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state: any) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = (dispatch: any) => ({
+  currentUser: (user: any) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

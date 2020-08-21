@@ -40,7 +40,7 @@ export const createUserProfileDocument = async (
     try {
       await userRef.set({ displayName, email, createdAt, ...additionalData });
     } catch (error) {
-      console.log('error creating user', error.message);
+      console.error('error creating user', error.message);
     }
   }
 
