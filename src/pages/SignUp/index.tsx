@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import CustomButton from '../../components/CustomButton';
 import FormInput from '../../components/FormInput';
 
-import { auth, createUserProfileDocument } from '../../firebase/firebase-utils';
+import { auth } from '../../firebase';
+import { createUserProfileDocument } from '../../firebase/firestore';
 
 import { Container, SignUpForm, Buttons, RightArrowIcon } from './styles';
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import GlobalStyles from './styles/GlobalStyles';
-import { auth, createUserProfileDocument } from './firebase/firebase-utils';
+import { auth } from './firebase/';
+import { createUserProfileDocument } from './firebase/firestore';
 import { setCurrentUser } from './redux/actions/user';
+
+import GlobalStyles from './styles/GlobalStyles';
 
 import Routes from './routes';
 

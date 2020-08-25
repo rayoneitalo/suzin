@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 import FormInput from '../../components/FormInput';
 import CustomButton from '../../components/CustomButton';
-import { signInWithGoogle, auth } from '../../firebase/firebase-utils';
+import { auth } from '../../firebase';
+import { signInWithGoogle } from '../../firebase/auth';
 
 import { Container, SignInForm, Buttons, RightArrowIcon } from './styles';
 
