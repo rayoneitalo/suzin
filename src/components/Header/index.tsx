@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { auth } from '../../firebase/firebase-utils';
+// import { auth } from '../../firebase/auth';
 import { Container, Logo, RightSide, Bars } from './styles';
 
 class Header extends React.Component {
