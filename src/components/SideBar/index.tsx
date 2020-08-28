@@ -1,10 +1,7 @@
 import React from 'react';
 import { Container, Menu, DropdownContainer } from './styles';
-// import { Link } from 'react-router-dom';
 
 const SideBar: React.FC = () => {
-  const options = [DropdownContainer];
-  const defaultOption = options[0];
   return (
     <Container>
       <Menu>

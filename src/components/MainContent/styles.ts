@@ -23,6 +23,14 @@ export const Form = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  > button {
+    cursor: pointer;
+    border: 1px solid #333;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
 `;
 export const AddIcon = styled.div``;
 export const Moeda = styled.div``;

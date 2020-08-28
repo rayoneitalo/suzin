@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { Search } from '../../../styles/GlobalIcons';
-import { Notifications } from '../../../styles/GlobalIcons';
+import Search from '@material-ui/icons/Search';
+import Notifications from '@material-ui/icons/Notifications';
 
 // LG - Logo
 // IS - InputSearch
 // MN - Menu
 // SB - SideBar
-// MC - MainContant
 
 export const Grid = styled.div`
   display: grid;
@@ -43,8 +42,8 @@ export const InputSearch = styled.div`
   }
 `;
 export const SearchIcon = styled(Search)`
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   color: var(--color-input);
 `;
 export const Menu = styled.div`
@@ -66,8 +65,8 @@ export const MenuIcons = styled.div`
   }
 `;
 export const NotificationIcon = styled(Notifications)`
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   color: rgba(0, 0, 0, 0.6);
 `;
 export const Profile = styled.div`

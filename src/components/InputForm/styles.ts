@@ -5,15 +5,15 @@ export const Container = styled.div`
   flex-direction: column;
 
   > label {
-    font-size: 1.7rem;
-    margin-bottom: 1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 11pt;
   }
 
   > input {
-    border: 1px solid var(--color-secondary);
-    border-radius: 5px;
+    border: 1px solid #cecece;
+    border-radius: 0.3rem;
+    height: 3rem;
     padding: 0.7rem;
   }
 `;
-
-export const Label = styled.label``;

@@ -11,18 +11,18 @@ import {
   Avatar,
   Logo,
 } from './styles';
-import LogoImage from '../../../assets/images/logo.png';
-import SideBar from '../../SideBar';
-import MainContent from '../../MainContent';
+import LogoImage from '../../assets/images/logo.png';
+import SideBar from '../SideBar';
+import MainContent from '../MainContent';
 const Layout: React.FC = () => {
   return (
     <Grid>
       <Logo>
-        <img src={LogoImage} alt='logo' />
+        <img src={LogoImage} alt="logo" />
       </Logo>
       <InputSearch>
         <SearchIcon />
-        <input type='search' placeholder='Search...' />
+        <input type="search" placeholder="Search..." />
       </InputSearch>
       <Menu>
         <MenuIcons>
