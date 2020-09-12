@@ -11,9 +11,9 @@ export const Container = styled.div`
   }
 
   > input {
-    border: 1px solid #cecece;
+    border: 1px solid var(--color-input);
     border-radius: 0.3rem;
-    height: 3rem;
+    height: 4rem;
     padding: 0.7rem;
   }
 `;

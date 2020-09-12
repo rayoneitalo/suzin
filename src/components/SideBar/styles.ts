@@ -5,49 +5,47 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: var(--color-primary);
-  padding: 20px 38px;
+  padding: 20px 0px;
   border-radius: 4px;
   margin-right: 1px;
 `;
 
-export const MenuTools = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const Menu = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
 
-  > h2 {
-    color: #fff;
-    margin-bottom: 8px;
-    font-size: 13pt;
-    font-weight: bold;
-    transition: 0.1s;
+  > button {
+    width: 100%;
+    cursor: pointer;
+    font-size: 15pt;
+    padding: 5px 0 5px 38px;
+    text-align: start;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  > button:hover {
+    background: rgba(255, 255, 255, 0.6);
   }
 `;
+
 export const DropdownContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+  margin-left: 52px;
 
-  > span {
+  > li {
+    color: #333;
     font-size: 12pt;
-    color: #fff;
+    margin-bottom: 8px;
     cursor: pointer;
-    margin-left: 15px;
-    padding: 4px;
-    border-radius: 4px;
+    list-style: none;
   }
 
-  > span:hover {
-    background: rgba(0, 0, 0, 0.4);
-  }
-
-  > span:last-child {
-    margin-top: 10px;
-    margin-bottom: 20px;
+  > li:hover {
+    color: rgba(255, 255, 255, 0.6);
   }
 `;

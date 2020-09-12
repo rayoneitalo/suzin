@@ -41,6 +41,7 @@ html, body, #root {
 
 a { text-decoration: none }
 
+
 input { color: var(--color-input) }
 
 span, p, label {

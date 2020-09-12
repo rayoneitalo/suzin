@@ -7,9 +7,11 @@ interface Props {
   name: string;
   type: string;
   label?: string;
-  value?: string;
+  value?: any;
   required?: any;
+  placeholder?: string;
   fatherFunction?: any;
+  isImage?: boolean;
 }
 
 const InputForm: React.FC<Props> = ({
@@ -17,6 +19,7 @@ const InputForm: React.FC<Props> = ({
   type,
   label,
   name,
+  placeholder,
   fatherFunction,
   ...rest
 }) => {
@@ -26,7 +29,13 @@ const InputForm: React.FC<Props> = ({
   return (
     <Container>
       <label htmlFor={id}>{label}</label>
-      <input id={id} type={type} name={name} onChange={handleChange} />
+      <input
+        id={id}
+        type={type}
+        name={name}
+        onChange={handleChange}
+        placeholder={placeholder}
+      />
     </Container>
   );
 };

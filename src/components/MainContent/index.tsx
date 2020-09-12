@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Header, Form } from './styles';
 import InputForm from '../InputForm';
 import { saveProduct } from '../../httpService/productHttpService';
+import FormContent from '../FormContent';
 
 class MainContent extends React.Component {
   state = {
@@ -10,10 +11,11 @@ class MainContent extends React.Component {
       ingredients: [],
       weight: 0,
       price: 0,
+      pathImage: '',
       file: null,
     },
   };
-
+  // Update state values
   handleChange = (e: any) => {
     switch (e.target.id) {
       case 'product-name':
@@ -57,11 +59,11 @@ class MainContent extends React.Component {
         });
         break;
       default:
-        break;
     }
   };
 
-  handleSave = () => {
+  handleSave = (e: any) => {
+    e.preventDefault();
     saveProduct({
       ...this.state,
     });
@@ -71,47 +73,66 @@ class MainContent extends React.Component {
     return (
       <Container>
         <Header>
-          <h2>Novo produto</h2>
+          <h2>Meu produto</h2>
         </Header>
         <Form>
-          <InputForm
-            id="product-name"
-            type="text"
-            name="productName"
-            label="Nome do produto"
-            fatherFunction={this.handleChange}
-          />
-          <InputForm
-            id="product-ingredients"
-            type="text"
-            label="Ingredients"
-            name="productIngredients"
-            fatherFunction={this.handleChange}
-          />
+          {/* <div className="group-form">
+            <InputForm
+              id="product-name"
+              type="text"
+              name="productName"
+              label="Nome do produto"
+              placeholder="Ex: Pão Integral..."
+              fatherFunction={this.handleChange}
+              value={this.state.product.name}
+            />
 
-          <InputForm
-            id="product-weight"
-            type="text"
-            label="Peso do produto"
-            name="productWeight"
-            fatherFunction={this.handleChange}
-          />
+            <InputForm
+              id="product-ingredients"
+              type="text"
+              label="Ingredients"
+              name="productIngredients"
+              placeholder="Ex: Farinha, Abóbora, ..."
+              fatherFunction={this.handleChange}
+              value={this.state.product.ingredients}
+            />
+          </div>
 
-          <InputForm
-            id="product-price"
-            type="text"
-            label="Preço do produto"
-            name="productPrice"
-            fatherFunction={this.handleChange}
-          />
-          <InputForm
-            id="product-image"
-            type="file"
-            name="productImage"
-            fatherFunction={this.handleChange}
-          />
+          <div className="group-form">
+            <InputForm
+              id="product-weight"
+              type="text"
+              label="Peso do produto"
+              name="productWeight"
+              placeholder="Ex: 200 g"
+              fatherFunction={this.handleChange}
+              value={this.state.product.weight}
+            />
 
-          <button onClick={this.handleSave}>Cadastrar</button>
+            <InputForm
+              id="product-price"
+              type="text"
+              label="Preço do produto"
+              name="productPrice"
+              placeholder="R$"
+              fatherFunction={this.handleChange}
+              value={this.state.product.price}
+            />
+          </div>
+          <div className="group-form">
+            <InputForm
+              id="product-image"
+              type="file"
+              name="productImage"
+              fatherFunction={this.handleChange}
+              value={this.state.product.file}
+              isImage
+            />
+          </div>
+
+          <button onClick={this.handleSave}>Cadastrar</button> */}
+
+          <FormContent />
         </Form>
       </Container>
     );

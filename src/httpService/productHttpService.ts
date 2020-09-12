@@ -4,13 +4,26 @@ const saveProduct = (object: any) => {
   if (object.product.file !== null) {
     const objectFile = object.product.file[0];
     const storageRef = app.storage().ref(`images/${objectFile.name}`);
-    storageRef.put(objectFile).then(snapshot => {
-      console.log('Upload or file');
-    });
+
+    try {
+      storageRef.put(objectFile).then(async snapshot => {
+        const dowloadURL = await snapshot.ref.getDownloadURL();
+        console.log(dowloadURL);
+      });
+    } catch (error) {
+      console.log('Message:' + error);
+    }
   } else {
     console.log('Empty file.');
   }
-  // const filesRef = storageRef.child('file');
+  const db = app.firestore();
+  db.collection('product').add({
+    name: object.product.name,
+    price: object.product.price,
+    weight: object.product.weight,
+    ingredients: object.product.ingredients,
+    pathImage: '',
+  });
 };
 
 export { saveProduct };

@@ -1,23 +1,57 @@
 import React from 'react';
 import { Container, Menu, DropdownContainer } from './styles';
 
-const SideBar: React.FC = () => {
-  return (
-    <Container>
-      <Menu>
-        <h2>Produto</h2>
-        <DropdownContainer>
-          <span>Meu produto</span>
-          <span>Produto parceiro</span>
-        </DropdownContainer>
-        <h2>Galeria</h2>
-        <DropdownContainer>
-          <span>Produtos</span>
-          <span>Eventos</span>
-        </DropdownContainer>
-      </Menu>
-    </Container>
-  );
-};
+class SideBar extends React.Component {
+  state = {
+    ProductDropdown: false,
+    GalleryDropdown: false,
+  };
+
+  displayChange = (e: any) => {
+    switch (e.target.innerText) {
+      case 'New product':
+        this.setState({
+          ProductDropdown: !this.state.ProductDropdown,
+        });
+        break;
+      case 'Gallery':
+        this.setState({
+          GalleryDropdown: !this.state.GalleryDropdown,
+        });
+        break;
+      default:
+        break;
+    }
+  };
+
+  formChange = (e: any) => {
+    console.log(e.target.innerText);
+  };
+
+  render() {
+    return (
+      <Container>
+        <Menu>
+          <button onClick={this.displayChange}>New product</button>
+        </Menu>
+        {this.state.ProductDropdown && (
+          <DropdownContainer>
+            <li onClick={this.formChange}>My product</li>
+            <li onClick={this.formChange}>Partner product</li>
+          </DropdownContainer>
+        )}
+        <Menu>
+          <button onClick={this.displayChange}>Gallery</button>
+        </Menu>
+        {this.state.GalleryDropdown && (
+          <DropdownContainer>
+            <li onClick={this.formChange}>Event</li>
+            <li onClick={this.formChange}>Pictures</li>
+          </DropdownContainer>
+        )}
+      </Container>
+    );
+  }
+}
 
 export default SideBar;
