@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Header, Form } from './styles';
 import InputForm from '../InputForm';
-import { saveProduct } from '../../httpService/productHttpService';
+import { saveProduct } from '../../controllers/productController';
 import FormContent from '../FormContent';
 
 class MainContent extends React.Component {
@@ -76,7 +76,7 @@ class MainContent extends React.Component {
           <h2>Meu produto</h2>
         </Header>
         <Form>
-          {/* <div className="group-form">
+          <div className="group-form">
             <InputForm
               id="product-name"
               type="text"
@@ -130,7 +130,7 @@ class MainContent extends React.Component {
             />
           </div>
 
-          <button onClick={this.handleSave}>Cadastrar</button> */}
+          <button onClick={this.handleSave}>Cadastrar</button>
 
           <FormContent />
         </Form>

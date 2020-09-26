@@ -1,4 +1,4 @@
-import app from '../firebase';
+import app from '../config/firebase';
 
 const saveProduct = (object: any) => {
   if (object.product.file !== null) {
